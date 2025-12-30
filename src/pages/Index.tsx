@@ -222,8 +222,15 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 px-4 bg-gray-50">
-        <div className="container mx-auto max-w-6xl">
+      <section id="portfolio" className="py-20 px-4 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://cdn.poehali.dev/projects/f61b204b-45bf-48b5-9d4d-c786e1405cbb/files/2ff267f4-9abe-4b36-9ae9-3bda405d3918.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4">Портфолио</Badge>
             <h2 className="font-heading font-bold text-4xl text-gray-900 mb-4">
@@ -235,7 +242,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {portfolio.map((project, index) => (
-              <Card key={index} className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 group">
+              <Card key={index} className="overflow-hidden border-none shadow-lg hover:shadow-2xl transition-all duration-300 group bg-white">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
@@ -254,7 +261,96 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-4">
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://cdn.poehali.dev/projects/f61b204b-45bf-48b5-9d4d-c786e1405cbb/files/e63c2b91-8567-4d72-a4a5-cc650c6333f8.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="mb-4">Почему мы?</Badge>
+            <h2 className="font-heading font-bold text-4xl text-gray-900 mb-4">
+              Наши преимущества
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Что отличает нас от конкурентов
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white/95 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name="Shield" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-xl mb-2">Гарантия 3 года</CardTitle>
+                <CardDescription className="text-base">
+                  Официальная гарантия на все виды работ. Бесплатное устранение дефектов в гарантийный период.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white/95 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name="Clock" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-xl mb-2">Соблюдаем сроки</CardTitle>
+                <CardDescription className="text-base">
+                  Фиксируем сроки в договоре. За каждый день просрочки — скидка 3% от стоимости работ.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white/95 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name="FileCheck" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-xl mb-2">Договор и смета</CardTitle>
+                <CardDescription className="text-base">
+                  Прозрачная смета без скрытых платежей. Официальный договор со всеми гарантиями.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white/95 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name="Users" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-xl mb-2">Опытные мастера</CardTitle>
+                <CardDescription className="text-base">
+                  Все специалисты с опытом от 10 лет. Регулярное обучение и повышение квалификации.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white/95 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name="Sparkles" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-xl mb-2">Уборка после работ</CardTitle>
+                <CardDescription className="text-base">
+                  Ежедневная уборка объекта и вывоз строительного мусора включены в стоимость.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white/95 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                  <Icon name="Wallet" className="text-primary" size={32} />
+                </div>
+                <CardTitle className="text-xl mb-2">Гибкая оплата</CardTitle>
+                <CardDescription className="text-base">
+                  Оплата по этапам работ. Принимаем наличные, безналичный расчет и карты.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <Badge className="mb-4">Отзывы</Badge>
